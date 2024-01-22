@@ -1,0 +1,327 @@
+@font-face {
+    font-family: "Barlow";
+    src: url("fonts/Barlow-Medium.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow";
+
+}
+li{
+    list-style: none;
+}
+.links a{
+    text-decoration: none;
+    color:rgb(179, 138, 76); 
+    font-size: 1.5rem;
+
+}
+.links a:hover{
+    color: rgb(151, 102, 28);
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+/* NavBar */
+
+nav{
+    width: 100%;
+    height: 60px;
+    
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+nav .logo{
+    font-size: 1.5rem;
+}
+
+nav .links{
+    display: flex;
+    gap: 2rem;
+    
+}
+.active a{ 
+    text-decoration: underline;
+    color: rgb(151, 102, 28);
+
+}
+#logo{
+    width: 120px;
+    margin-top: 20px;
+}
+.toogle_btn{
+    color: rgb(151, 102, 28);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.action_btn{
+    border: 2px solid rgb(151, 102, 28);
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    color:rgb(151, 102, 28) ;
+    text-decoration: none;
+}
+.action_btn:hover{
+    background-color: rgb(151, 102, 28);
+    color: white;
+    cursor: pointer;
+}
+.dropdown{
+    display: none;
+}
+
+
+/*Heading*/
+
+.title{
+    text-align: center;
+    color: rgb(165, 128, 71);
+    margin-top: 50px;
+    font-size: 3rem;
+
+}
+
+
+/*dropdown style*/
+
+.dropdown{
+    margin-top: 20px;
+    background-color: rgb(151, 102, 28) ;
+    color: white;
+    width: 100%;
+    height: 0;
+    border-radius: 10px;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+.dropdown li{
+    padding: 0.7rem;
+    text-align: center;
+    display: none;
+
+}
+.dropdown.open li{
+    display: block;
+
+}
+.dropdown.open{
+    height: 250px;;
+}
+.dropdown a{
+    text-decoration: none;
+    color: white;
+}
+.dropdown li{
+    margin-top: 10px;
+
+}
+.dropdown a:hover{
+    color: rgb(165, 128, 71);
+
+}
+.images{
+    height: 300px;
+    font-size: 50px;
+    text-align: center;
+}
+
+/*Offer Part*/
+.offer_part{
+    display: flex;
+    background-color: rgb(165, 128, 71) ;
+
+}
+.offer{
+    flex: 1;
+   
+}
+
+.offer.text{
+
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+
+}
+
+.top-part{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+}
+.top-part i{
+    font-size: 3.5rem;
+}
+.top-part p{
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.bottom-part{
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.bottom-part i{
+    font-size: 3.5rem;
+}
+.bottom-part p{
+    font-size: 1.5rem;
+}
+/*Reviews Part*/
+
+.reviews{
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    color:rgb(165, 128, 71);
+    margin-top: 30px;
+}
+.reviews h2{
+    font-size: 60px;
+}
+.reviews h3{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.reviews p{
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+header{
+    margin-bottom: 40px;
+}
+footer{
+    margin-top: 50px;
+    background-color: rgb(151, 102, 28);
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+}
+footer p{
+    margin-top: 12px;
+    font-size: 15px;
+    
+}
+
+footer a{
+    text-decoration: none;
+    font-size: 15px;
+    color: white;
+    
+}
+.slider{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider img{
+    width: 100%;
+    display: none;
+    max-height: 810px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+.slider button{
+    position: absolute;
+    top: 50%;
+    padding: 10px 15px;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade{
+    from{opacity: .5;}
+    to{opacity:1}
+}
+/*Responsivness*/
+@media (max-width:992px){
+    nav .links, nav.action_btn{
+        display: none;
+    }
+    .toogle_btn{
+        display: block;
+    }
+    .dropdown{
+        display: block;
+    }
+    .title{
+        font-size: 2.3rem;
+    }
+    .offer_part{
+        display: block;
+    
+    }
+    .offer_part img{
+        display: none;
+
+    }
+    .icons p{
+        font-size: 1rem;
+
+    }
+    .icons i{
+        font-size: 2.5rem;
+
+    }
+    .offer_part h1{
+        padding-top: 40px;
+        font-size: 2.5rem;
+    }
+    .offer_part{
+        height: 450px;
+    }
+    .reviews h2{
+        font-size: 50px;
+    }
+    .reviews h3{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .reviews p{
+        color: black;
+        font-size: 15px;
+        text-align: center;
+    }
+    .slider button{
+        font-size: 2rem;
+    }
+    
+
+
+}
+
